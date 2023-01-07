@@ -21,6 +21,8 @@ export const serverSchema = z.object({
   ),
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
+  TG_BOT_USER: z.string(),
+  TG_BOT_PASS: z.string()
 });
 
 /**
@@ -29,7 +31,7 @@ export const serverSchema = z.object({
  * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 export const clientSchema = z.object({
-  // NEXT_PUBLIC_CLIENTVAR: z.string(),
+  NEXT_PUBLIC_TG_BOT_NAME: z.string()
 });
 
 /**
@@ -40,4 +42,5 @@ export const clientSchema = z.object({
  */
 export const clientEnv = {
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+  NEXT_PUBLIC_TG_BOT_NAME: process.env.NEXT_PUBLIC_TG_BOT_NAME
 };
