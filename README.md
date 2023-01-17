@@ -21,7 +21,8 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 
 ## How do I deploy this?
 
-TODO: automatic Docker image builds into GHCR for tagged releases.
+By making a release.
+
 TODO: github action to trigger webhook on hosting server that docker pulls newly released docker image by digest
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
