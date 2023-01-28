@@ -13,6 +13,10 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  output: "standalone"
+  output: "standalone",
+  images: {
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
 };
 export default config;
