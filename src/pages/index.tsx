@@ -1,10 +1,14 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import Image from 'next/image'
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { api } from "../utils/api";
+import Hytkylogo from "../../public/hytkylogo.svg";
+import Facebooklogo from "../../public/facebook.svg";
+import Instagramlogo from "../../public/instagram.svg";
+import Soundcloudlogo from "../../public/soundcloud.svg";
+import Miukumauku from "../../public/miukumauku.svg";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -18,41 +22,62 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#000000] to-[#15162c]">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <Image src="/../public/hytkylogo.svg" alt="HYTKY" width="700" height="25"/>
-          <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            <span className="text-[hsl(280,100%,70%)]">HYTKY</span> v2
-          </h1>
+
+          <Hytkylogo />
+
+          <div className="justify-center border-2 border-dotted border-orange-600 text-center">
+            <h2 className="text-xs tracking-tight text-white">Seuraa meitä</h2>
+            <div className="flex flex-row gap-4 pr-1">
+              <a
+                href="https://www.facebook.com/hytky/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Facebooklogo width={15} height={15}/>
+              </a>
+              <a
+                href="https://www.instagram.com/hytkyry/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagramlogo width={15} height={15}/>
+              </a>
+              <a
+                href="https://www.soundcloud.com/hytkyry"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Soundcloudlogo width={15} height={15}/>
+              </a>
+            </div>
+
+          </div>
+          <span className="tracking-tight text-white">Kysy sähköpostilla: hytky
+            <Miukumauku width={15} height={15} />
+              hytky.org
+            </span>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
-              className="flex max-w-xs flex-col gap-4 text-center rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-center text-white hover:bg-white/20"
               href="/eventArchive"
-              target="_blank"
-              >
-                <h3 className="text-2xl font-bold">Tapahtuma-arkisto →</h3>
-                <div className="text-lg">
-                  Menneet tapahtumat.
-                </div>
-              </Link>
-              <Link
-              className="flex max-w-xs flex-col gap-4 text-center rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+            >
+              <h3 className="text-2xl font-bold">Tapahtuma-arkisto →</h3>
+              <div className="text-lg">Menneet tapahtumat.</div>
+            </Link>
+            <Link
+              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-center text-white hover:bg-white/20"
               href="/about"
-              target="_blank"
-              >
-                <h3 className="text-2xl font-bold">HYTKY? →</h3>
-                <div className="text-lg">
-                  Mikä ihmeen HYTKY?
-                </div>
-              </Link>
-              <Link
-              className="flex max-w-xs flex-col gap-4 text-center rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+            >
+              <h3 className="text-2xl font-bold italic">HYTKY? →</h3>
+              <div className="text-lg">Mikä ihmeen HYTKY?</div>
+            </Link>
+            <Link
+              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-center text-white hover:bg-white/20"
               href="/rental"
-              target="_blank"
-              >
-                <h3 className="text-2xl font-bold">Vuokraus →</h3>
-                <div className="text-lg">
-                  Tietoa laitevuokrauksesta.
-                </div>
-              </Link>
+            >
+              <h3 className="text-2xl font-bold">Vuokraus →</h3>
+              <div className="text-lg">Tietoa laitevuokrauksesta.</div>
+            </Link>
           </div>
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
@@ -73,7 +98,7 @@ const AuthShowcase: React.FC = () => {
 
   const { data: secretMessage } = api.example.getSecretMessage.useQuery(
     undefined, // no input
-    { enabled: sessionData?.user !== undefined },
+    { enabled: sessionData?.user !== undefined }
   );
 
   return (

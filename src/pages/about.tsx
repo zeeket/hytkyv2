@@ -1,17 +1,33 @@
-import { NextPage } from 'next';
-import Link from 'next/link';
+import { NextPage } from "next";
+import Link from "next/link";
 
 const About: NextPage = () => {
-    return (
-        <>
-        <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#000000] to-[#15162c]">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">HYTKY?</h1>
+  return (
+    <>
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#000000] to-[#15162c]">
+        <h1 className="text-5xl font-extrabold italic tracking-tight text-oldschool-orange sm:text-[5rem]">
+          HYTKY?
+        </h1>
+        <p className="text-2xl text-white">
+          Helsingin yliopiston teknokulttuurin ystävät ry
+        </p>
+        <p className="text-2xl text-white">DIY techno culture since 1996</p>
+        <h3 className="font-extrabold text-oldschool-orange sm:text-[3rem]">
+          Kerhohuone
+        </h3>
+        <p className="text-2xl text-white">
+          Domus Gaudium, Leppäsuonkatu 11, 00100 Helsinki
+        </p>
+        <p className="text-1xl text-white">
+          Ovisummeri: Ulrika. Portaat alas tai hissillä kerrokseen -1. Tila on
+          esteetön.
+        </p>
         <Link href="/">
-            <p className="text-white">← Takaisin</p>
+          <p className="pt-6 text-white">← Takaisin</p>
         </Link>
-        </main>
-        </>
-    );
+      </main>
+    </>
+  );
 };
 
 export default About;
