@@ -1,4 +1,5 @@
 # HYTKYv2
+![Build](https://github.com/zeeket/hytkyv2/actions/workflows/build.yml/badge.svg)
 
 Rewrite of hytky.org microsite and forum using [T3 Stack](https://create.t3.gg/).
 
