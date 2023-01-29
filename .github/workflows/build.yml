@@ -18,5 +18,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
+      - run: NEXT_PUBLIC_TG_BOT_NAME=github npm ci
+      - run: NEXT_PUBLIC_TG_BOT_NAME=github npm run build --if-present
