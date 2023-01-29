@@ -7,7 +7,7 @@ jobs:
   build:
     env:
       NEXT_PUBLIC_TG_BOT_NAME: ${{ secrets.next_public_tg_bot_name }}
-      DATABASE_URL: postgres
+      DATABASE_URL: ${{ secrets.database_url }}
       POSTGRES_PASSWORD: ${{ secrets.postgres_password }}
       NEXTAUTH_SECRET: ${{ secrets.nextauth_secret }}
       NEXTAUTH_URL: ${{ secrets.nextauth_url }}
