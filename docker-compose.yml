@@ -14,7 +14,7 @@ services:
       - DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET}
       - TG_BOT_USER=${TG_BOT_USER}
       - TG_BOT_PASS=${TG_BOT_PASS}
-    command: sh -c "node server.js"
+    #command: sh -c "node server.js"
     depends_on:
       postgres:
         condition: service_healthy
