@@ -1,0 +1,32 @@
+name: npm build
+
+on:
+  push
+
+jobs:
+  build:
+    env:
+      NEXT_PUBLIC_TG_BOT_NAME: ${{ secrets.next_public_tg_bot_name }}
+      DATABASE_URL: ${{ secrets.database_url }}
+      POSTGRES_PASSWORD: ${{ secrets.postgres_password }}
+      NEXTAUTH_SECRET: ${{ secrets.nextauth_secret }}
+      NEXTAUTH_URL: ${{ secrets.nextauth_url }}
+      DISCORD_CLIENT_ID: ${{ secrets.discord_client_id }}
+      DISCORD_CLIENT_SECRET: ${{ secrets.discord_client_secret }}
+      TG_BOT_USER: ${{ secrets.tg_bot_user }}
+      TG_BOT_PASS: ${{ secrets.tg_bot_pass }}
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18, 19]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
